@@ -43,8 +43,14 @@
  */
 HIDDEN CHBinaryTreeNode* CHCreateBinaryTreeNodeWithObject(id anObject);
 
+//#########################################################################################################
+//######################################### COCOAPOD SOURCE CHANGED #######################################
+//############################################ ALEX: 8 Mar 2017 ###########################################
+//###### Added 'static const' to avoid link error against declaration in CHAbstractBinarySearchTree.m #####
+//#########################################################################################################
+
 // These are used by subclasses; marked as HIDDEN to reduce external visibility.
-HIDDEN size_t kCHBinaryTreeNodeSize;
+static const HIDDEN size_t kCHBinaryTreeNodeSize;
 
 #pragma mark Stack macros
 

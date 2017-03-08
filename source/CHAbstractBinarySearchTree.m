@@ -13,8 +13,14 @@
 #import "CHAbstractBinarySearchTree.h"
 #import "CHAbstractBinarySearchTree_Internal.h"
 
+//#########################################################################################################
+//######################################### COCOAPOD SOURCE CHANGED #######################################
+//############################################ ALEX: 8 Mar 2017 ###########################################
+//# Added 'static const' to avoid link error against declaration in CHAbstractBinarySearchTree_Internal.h #
+//#########################################################################################################
+
 // Definitions of extern variables from CHAbstractBinarySearchTree_Internal.h
-size_t kCHBinaryTreeNodeSize = sizeof(CHBinaryTreeNode);
+static const size_t kCHBinaryTreeNodeSize = sizeof(CHBinaryTreeNode);
 
 /**
  A dummy object that resides in the header node for a tree. Using a header node can simplify insertion logic by eliminating the need to check whether the root is null. The actual root of the tree is generally stored as the right child of the header node. In order to always proceed to the actual root node when traversing down the tree, instances of this class always return @c NSOrderedAscending when called as the receiver of the @c -compare: method.
